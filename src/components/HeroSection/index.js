@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Video from '../../videos/keyboard.mp4'
 import { Button } from '../ButtonElements';
-import { BackendURL }from '../BackendURL'
 import {
     HeroContainer,
     HeroBg,

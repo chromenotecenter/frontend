@@ -1,22 +1,25 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages';
 import Signup from './pages/signup';
-import Cookies from 'js-cookie';
-import { BackendURL } from './components/BackendURL';
 import Dashbaord from './components/Dashboard';
 
 
 function App() {
-  // let csrf = Cookies.get('csfrtoken');
-  // if (!csrf){
-  //   fetch(BackendURL + 'api/csfr_token',{method: "GET", credentials: 'include'}).then(response => response.json())
-  //   // .then(res_token => Cookies.set('csrftoken', res_token['csrf_token'], {path: ''});)
-
+  // const loadScript = function (url) {
+  //   var s = document.createElement("script");
+  //   s.src = url;
+  //   s.onload = function () {
+  //     window.gapi.load('auth2', function () {
+  //       var auth2 = window.gapi.auth2.init({
+  //         client_id: '425769475738-5nsmqrlatdene4ih1qfkj6grmt5bf18i.apps.googleusercontent.com'
+  //       });
+  //     });
+  //   }
+  //   document.head.appendChild(s)
   // }
-  console.log("hi bruce")
+  // loadScript("https://apis.google.com/js/client:platform.js")
+  console.log(window.auth2)
   return (
     <Router>
       <Switch>
