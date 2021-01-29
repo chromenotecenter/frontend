@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Video from '../../videos/keyboard.mp4'
 import { Button } from '../ButtonElements';
-import { useCookies } from 'react-cookie';
+import { BackendURL }from '../BackendURL'
 import {
     HeroContainer,
     HeroBg,
@@ -14,15 +14,9 @@ import {
     ArrowRight
 } from './HeroSectionElement';
 
+
 const HeroSection = () => {
-    const [cookies, setCookie] = useCookies(['name']);
-
-    fetch('http://c6d0e633b39a.ngrok.io/api/csfr_token', {
-        credentials: 'include',
-    })
-    console.log('here')
     const [hover, setHover] = useState(false);
-
     const onHover = () => {
         setHover(!hover);
     }
@@ -32,8 +26,8 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>A Time Machine for</HeroH1>
-                <HeroH1>Personal Knowledge</HeroH1>
+                <HeroH1>We built a Time Machine</HeroH1>
+                <HeroH1>for Personal Knowledge</HeroH1>
                 <HeroP>Join our free Beta program now!</HeroP>
                 <HeroBtnWrapper>
                     <Button
