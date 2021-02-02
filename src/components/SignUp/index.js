@@ -3,8 +3,9 @@ import {FormContainer, FormBody, FormLogBox, FormForm, FormH1, FormInputPass, Fo
 import { BackendURL }from '../BackendURL'
 
 
-const SignUp = () => {
+const SignUp = ({ open, onClose }) => {
     const signInCallback = (authResult) => {
+        
         console.log(authResult)
         // fetch("https://ad44a0cb5b78.ngrok.io/api/google_signup", {
         //     method: "POST",
@@ -28,17 +29,15 @@ const SignUp = () => {
             auth2.grantOfflineAccess().then(signInCallback);
           });
     }
+
+    if (!open) return null
     return (
-        <FormBody>
+        <FormBody onClick={onClose}>
             <FormContainer>
                <FormLogBox>
                     <FormForm onSubmit={handleSubmit}  >
-                        <FormH1>Create Account</FormH1>
-                        <FormInputPass placeholder="First Name" type="text" name="firstname" autoFocus="autofocus" required="required" />
-                        <FormInputPass placeholder="Last Name" type="text" name="lastname" autoFocus="autofocus" required="required" />
-                        <FormInputPass placeholder="Email" type="email" name="email" autoFocus="autofocus" required="required" />
-                        <FormInputPass placeholder="Password" type="password" name="password" autoFocus="autofocus" required="required" />
-                        <FormInputPass placeholder="Confirm Password" type="password" name="password2" autoFocus="autofocus" required="required" />
+                        <FormH1>Sign up for Sentrilize!</FormH1>
+                        
                         <FormInputButton type="submit" value="Sign me up!" />
                     </FormForm>  
                </FormLogBox>
@@ -49,3 +48,4 @@ const SignUp = () => {
 
 
 export default SignUp
+

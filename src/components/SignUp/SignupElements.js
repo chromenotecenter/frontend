@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const FormBody = styled.div`
-    background: #58c791;
+    background: #00000080;
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 100;
 `
 
 
@@ -17,9 +18,9 @@ export const FormContainer = styled.div`
 `
 
 export const FormLogBox = styled.div`
-  margin: 100px auto;
+  margin: 200px auto;
   width: 340px;
-  height: 450px;
+  height: 300px;
   background-color: #fff;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -32,6 +33,7 @@ export const FormLogBox = styled.div`
 
 export const FormForm = styled.form`
     height:100%;
+    padding-top: 80px;
 `
 export const FormH1 = styled.h1`
     text-align: center;

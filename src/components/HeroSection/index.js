@@ -13,14 +13,24 @@ import {
     ArrowForward,
     ArrowRight
 } from './HeroSectionElement';
+import Signup from '../SignUp'
 
 
 const HeroSection = () => {
     const [hover, setHover] = useState(false);
+    const [popup, setState] = useState(false);
+
     const onHover = () => {
         setHover(!hover);
-    }
+    };
+
+    
+    
     return (
+        
+        <>
+        <Signup open={popup} onClose={() => setState(false)} />
+        
         <HeroContainer>
             <HeroBg>
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
@@ -31,7 +41,7 @@ const HeroSection = () => {
                 <HeroP>Join our free Beta program now!</HeroP>
                 <HeroBtnWrapper>
                     <Button
-                        to='signup'
+                        onClick={() => setState(true)}
                         smooth={true}
                         duration={500}
                         spy={true}
@@ -47,6 +57,7 @@ const HeroSection = () => {
                 </HeroBtnWrapper>
             </HeroContent>
         </HeroContainer>
+        </>
     )
 }
 

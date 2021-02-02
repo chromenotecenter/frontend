@@ -14,8 +14,13 @@ import {
     NavBtnLink
 } from './NavbarElements';
 
+
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false);
+    
+
+    
+
 
     const changeNav = () => {
         if (window.scrollY >= 80) {
@@ -32,6 +37,12 @@ const Navbar = ({ toggle }) => {
     const toggleHome = () => {
         scroll.scrollToTop();
     };
+
+    // const togglePop = () => {
+    //     this.setState({
+    //         seen: !this.state.seen
+    //     });
+    // };
 
     return (
         <>
@@ -95,11 +106,15 @@ const Navbar = ({ toggle }) => {
                             </NavItem>
                         </NavMenu>
                         <NavBtn>
-                            <NavBtnLink to='/signin'>Sign Up</NavBtnLink>
+                            <NavBtnLink  > 
+                                Sign Up
+                            </NavBtnLink>
                         </NavBtn>
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>
+        
+        
         </>
     );
 };
