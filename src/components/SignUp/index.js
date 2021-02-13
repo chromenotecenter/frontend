@@ -5,24 +5,23 @@ import { BackendURL }from '../BackendURL'
 
 const SignUp = () => {
     const signInCallback = (authResult) => {
-        console.log(authResult)
-        // fetch("https://ad44a0cb5b78.ngrok.io/api/google_signup", {
-        //     method: "POST",
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //       },
-        //       credentials: 'include',
-        //       body: JSON.stringify(authResult)
-        // }).then((res) => {
-        //     console.log(res.json())
-        // })
+        fetch("https://abe9f0b95a9d.ngrok.io/api/google_signup", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              credentials: 'include',
+              body: JSON.stringify(authResult)
+        }).then((res) => {
+            console.log(res.json())
+        })
     } 
     const handleSubmit = (e) => {
         e.preventDefault();
         window.gapi.load('auth2', function() {
             let auth2 = window.gapi.auth2.init({
-              client_id: '425769475738-5nsmqrlatdene4ih1qfkj6grmt5bf18i.apps.googleusercontent.com',
+              client_id: '425769475738-ue64qfeithd259asjpk33hrhssjim76n.apps.googleusercontent.com',
               scope: 'email'
             });
             auth2.grantOfflineAccess().then(signInCallback);

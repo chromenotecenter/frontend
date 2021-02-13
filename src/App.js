@@ -9,6 +9,15 @@ import { BackendURL } from './components/BackendURL';
 
 
 function App() {
+  // fetch("https://84c38a1d66f9.ngrok.io/cookie", {
+  //   method: "GET",
+  //   headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     credentials: 'include'
+  //   }
+  // )
 
   return (
     <Router>
